@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Software &amp; Documentation - DIGITRONIC</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#404751",
+                        "tertiary": "#5b5f63",
+                        "surface-variant": "#e2e2e2",
+                        "outline": "#707883",
+                        "secondary-container": "#dde3eb",
+                        "primary-fixed-dim": "#9bcbff",
+                        "surface-bright": "#f9f9f9",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "secondary": "#595f65",
+                        "inverse-primary": "#9bcbff",
+                        "surface-tint": "#0062a0",
+                        "secondary-fixed": "#dde3eb",
+                        "primary-fixed": "#d0e4ff",
+                        "on-secondary-container": "#5f656c",
+                        "on-background": "#1a1c1c",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-container": "#292d31",
+                        "on-surface": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#41474e",
+                        "surface-container-low": "#f3f3f3",
+                        "background": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#bfc7d3",
+                        "on-primary-fixed": "#001d34",
+                        "on-primary-container": "#002f50",
+                        "on-tertiary-fixed": "#181c20",
+                        "tertiary-fixed": "#e0e3e8",
+                        "tertiary-fixed-dim": "#c3c7cc",
+                        "surface-container-high": "#e8e8e8",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#161c22",
+                        "secondary-fixed-dim": "#c1c7ce",
+                        "surface-dim": "#dadada",
+                        "on-tertiary-fixed-variant": "#43474c",
+                        "surface-container-highest": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#004a7a",
+                        "primary-container": "#3099ec",
+                        "tertiary-container": "#919499",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#eeeeee",
+                        "primary": "#0062a0",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col pt-20">
+<!-- TopNavBar -->
+<nav class="bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl fixed top-0 w-full z-50 transition-colors">
+<div class="flex justify-between items-center px-12 h-20 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<a class="text-2xl font-black tracking-tighter text-blue-800 dark:text-blue-300" href="#">DIGITRONIC</a>
+<div class="hidden md:flex gap-6 font-['Manrope'] font-semibold tracking-tight text-sm">
+<a class="text-slate-700 dark:text-slate-300 hover:text-blue-600 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors active:scale-95 duration-200 px-3 py-2 rounded-md" href="#">Главная</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-blue-600 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors active:scale-95 duration-200 px-3 py-2 rounded-md" href="#">Каталог</a>
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-500 pb-1 px-3 py-2" href="#">ПО и Документация</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-blue-600 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors active:scale-95 duration-200 px-3 py-2 rounded-md" href="#">О компании</a>
+</div>
+</div>
+<div class="flex items-center gap-4 font-['Manrope'] font-semibold tracking-tight text-sm">
+<button class="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors p-2">
+<span class="material-symbols-outlined">language</span>
+</button>
+<a class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors active:scale-95 duration-200 shadow-sm" href="#">Стать партнером</a>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-screen-2xl mx-auto px-8 py-24">
+<!-- Header Section -->
+<header class="mb-16">
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold tracking-tight text-on-surface mb-6">Software &amp; Documentation</h1>
+<p class="font-body text-xl text-on-surface-variant max-w-3xl leading-relaxed">
+                Access the latest software updates, technical manuals, and certification documents for all DIGITRONIC autogas systems. Precision tools for professional installations.
+            </p>
+</header>
+<!-- Tabs -->
+<div class="mb-12">
+<div class="flex gap-8 bg-surface-container-low p-2 rounded-xl w-max">
+<button class="px-6 py-3 rounded-lg bg-surface text-primary font-semibold shadow-sm transition-all">Software</button>
+<button class="px-6 py-3 rounded-lg text-on-surface-variant font-medium hover:text-primary hover:bg-surface-container transition-all">Instructions</button>
+<button class="px-6 py-3 rounded-lg text-on-surface-variant font-medium hover:text-primary hover:bg-surface-container transition-all">Certificates</button>
+</div>
+</div>
+<!-- Data Table Container (Glassmorphism/Card approach instead of standard table) -->
+<div class="bg-surface-container-lowest rounded-xl p-8 mb-24">
+<div class="flex justify-between items-center mb-8">
+<h2 class="font-headline text-2xl font-bold text-on-surface">Latest Software Releases</h2>
+<!-- Search Input -->
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-highest text-on-surface pl-10 pr-4 py-2 rounded-lg border-0 focus:ring-0 focus:bg-surface-container-lowest focus:border-b-2 focus:border-b-primary-container transition-all placeholder:text-outline" placeholder="Search files..." type="text"/>
+</div>
+</div>
+<!-- List Header -->
+<div class="grid grid-cols-12 gap-4 px-6 py-4 text-sm font-semibold text-on-surface-variant uppercase tracking-wider">
+<div class="col-span-6 md:col-span-5">Name</div>
+<div class="hidden md:block col-span-2">Version</div>
+<div class="hidden md:block col-span-2">Date</div>
+<div class="hidden md:block col-span-2">Size</div>
+<div class="col-span-6 md:col-span-1 text-right">Action</div>
+</div>
+<!-- List Items -->
+<div class="flex flex-col gap-4">
+<!-- Item 1 -->
+<div class="grid grid-cols-12 gap-4 items-center px-6 py-5 bg-surface rounded-xl hover:bg-surface-container-low transition-colors group">
+<div class="col-span-6 md:col-span-5 flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed-dim flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">DIGITRONIC Maxi-2 Tuning Software</p>
+<p class="text-sm text-on-surface-variant md:hidden">v3.4.1 • 12 Oct 2023 • 45 MB</p>
+<div class="mt-1 hidden md:flex gap-2">
+<span class="text-xs bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full">OBDII</span>
+<span class="text-xs bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full">6-Cylinder</span>
+</div>
+</div>
+</div>
+<div class="hidden md:block col-span-2 text-on-surface font-medium">v3.4.1</div>
+<div class="hidden md:block col-span-2 text-on-surface-variant">12 Oct 2023</div>
+<div class="hidden md:block col-span-2 text-on-surface-variant">45 MB</div>
+<div class="col-span-6 md:col-span-1 flex justify-end">
+<button aria-label="Download" class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="grid grid-cols-12 gap-4 items-center px-6 py-5 bg-surface rounded-xl hover:bg-surface-container-low transition-colors group">
+<div class="col-span-6 md:col-span-5 flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed-dim flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">DIGITRONIC AEB Diagnostic Tool</p>
+<p class="text-sm text-on-surface-variant md:hidden">v2.1.0 • 05 Sep 2023 • 28 MB</p>
+<div class="mt-1 hidden md:flex gap-2">
+<span class="text-xs bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full">Diagnostic</span>
+</div>
+</div>
+</div>
+<div class="hidden md:block col-span-2 text-on-surface font-medium">v2.1.0</div>
+<div class="hidden md:block col-span-2 text-on-surface-variant">05 Sep 2023</div>
+<div class="hidden md:block col-span-2 text-on-surface-variant">28 MB</div>
+<div class="col-span-6 md:col-span-1 flex justify-end">
+<button aria-label="Download" class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="grid grid-cols-12 gap-4 items-center px-6 py-5 bg-surface rounded-xl hover:bg-surface-container-low transition-colors group">
+<div class="col-span-6 md:col-span-5 flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed-dim flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Firmware Update Utility</p>
+<p class="text-sm text-on-surface-variant md:hidden">v1.8.5 • 22 Aug 2023 • 12 MB</p>
+<div class="mt-1 hidden md:flex gap-2">
+<span class="text-xs bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full">Firmware</span>
+<span class="text-xs bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full">Universal</span>
+</div>
+</div>
+</div>
+<div class="hidden md:block col-span-2 text-on-surface font-medium">v1.8.5</div>
+<div class="hidden md:block col-span-2 text-on-surface-variant">22 Aug 2023</div>
+<div class="hidden md:block col-span-2 text-on-surface-variant">12 MB</div>
+<div class="col-span-6 md:col-span-1 flex justify-end">
+<button aria-label="Download" class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="grid grid-cols-12 gap-4 items-center px-6 py-5 bg-surface rounded-xl hover:bg-surface-container-low transition-colors group">
+<div class="col-span-6 md:col-span-5 flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed-dim flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">DIGITRONIC MP48 Setup</p>
+<p class="text-sm text-on-surface-variant md:hidden">v4.0.2 • 10 Jul 2023 • 52 MB</p>
+<div class="mt-1 hidden md:flex gap-2">
+<span class="text-xs bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full">4-Cylinder</span>
+</div>
+</div>
+</div>
+<div class="hidden md:block col-span-2 text-on-surface font-medium">v4.0.2</div>
+<div class="hidden md:block col-span-2 text-on-surface-variant">10 Jul 2023</div>
+<div class="hidden md:block col-span-2 text-on-surface-variant">52 MB</div>
+<div class="col-span-6 md:col-span-1 flex justify-end">
+<button aria-label="Download" class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination (Subtle) -->
+<div class="mt-8 flex justify-center gap-2">
+<button class="w-8 h-8 rounded text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary font-medium flex items-center justify-center">1</button>
+<button class="w-8 h-8 rounded text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors font-medium flex items-center justify-center">2</button>
+<button class="w-8 h-8 rounded text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors font-medium flex items-center justify-center">3</button>
+<button class="w-8 h-8 rounded text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full rounded-none">
+<div class="flex flex-col md:flex-row justify-between items-center py-16 px-12 border-t border-slate-200 dark:border-slate-800 max-w-screen-2xl mx-auto">
+<div class="mb-8 md:mb-0 text-center md:text-left">
+<span class="text-lg font-bold text-slate-900 dark:text-white block mb-2">DIGITRONIC</span>
+<p class="font-['Inter'] text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+                    © 2024 DIGITRONIC
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 font-['Inter'] text-sm leading-relaxed">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-all duration-300 ease-in-out" href="#">Privacy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-all duration-300 ease-in-out" href="#">Terms</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-all duration-300 ease-in-out" href="#">Certificates</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-all duration-300 ease-in-out" href="#">Support</a>
+<a class="text-blue-600 font-bold hover:text-blue-500 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-all duration-300 ease-in-out" href="#">+7 (495) 000-00-00</a>
+</div>
+</div>
+</footer>
+</body></html>

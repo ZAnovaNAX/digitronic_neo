@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DIGITRONIC - Catalog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#404751",
+                        "tertiary": "#5b5f63",
+                        "surface-variant": "#e2e2e2",
+                        "outline": "#707883",
+                        "secondary-container": "#dde3eb",
+                        "primary-fixed-dim": "#9bcbff",
+                        "surface-bright": "#f9f9f9",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "secondary": "#595f65",
+                        "inverse-primary": "#9bcbff",
+                        "surface-tint": "#0062a0",
+                        "secondary-fixed": "#dde3eb",
+                        "primary-fixed": "#d0e4ff",
+                        "on-secondary-container": "#5f656c",
+                        "on-background": "#1a1c1c",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-container": "#292d31",
+                        "on-surface": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#41474e",
+                        "surface-container-low": "#f3f3f3",
+                        "background": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#bfc7d3",
+                        "on-primary-fixed": "#001d34",
+                        "on-primary-container": "#002f50",
+                        "on-tertiary-fixed": "#181c20",
+                        "tertiary-fixed": "#e0e3e8",
+                        "tertiary-fixed-dim": "#c3c7cc",
+                        "surface-container-high": "#e8e8e8",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#161c22",
+                        "secondary-fixed-dim": "#c1c7ce",
+                        "surface-dim": "#dadada",
+                        "on-tertiary-fixed-variant": "#43474c",
+                        "surface-container-highest": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#004a7a",
+                        "primary-container": "#3099ec",
+                        "tertiary-container": "#919499",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#eeeeee",
+                        "primary": "#0062a0",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased pt-20">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-12 h-20 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<div class="text-2xl font-black tracking-tighter text-blue-800 dark:text-blue-300 font-headline">
+                DIGITRONIC
+            </div>
+<nav class="hidden md:flex gap-6 font-['Manrope'] font-semibold tracking-tight text-sm">
+<a class="text-slate-700 dark:text-slate-300 hover:text-blue-600 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors px-2 py-1 rounded" href="#">Главная</a>
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-500 pb-1 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors px-2 rounded-t" href="#">Каталог</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-blue-600 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors px-2 py-1 rounded" href="#">ПО и Документация</a>
+<a class="text-slate-700 dark:text-slate-300 hover:text-blue-600 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors px-2 py-1 rounded" href="#">О компании</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<!-- search_bar: hidden -->
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-body font-semibold py-2 px-6 rounded-full hover:opacity-90 transition-opacity active:scale-95 duration-200">
+                Стать партнером
+            </button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 w-full max-w-screen-2xl mx-auto px-8 py-12 flex flex-col md:flex-row gap-8">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-1/4 flex-shrink-0 bg-surface-container-low rounded-xl p-6 h-fit sticky top-28">
+<h2 class="font-headline font-bold text-xl text-on-surface mb-6">Filters</h2>
+<!-- Filter Group: LPG Generation -->
+<div class="mb-8">
+<h3 class="font-body font-semibold text-sm text-on-surface-variant mb-3">LPG Generation</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="w-5 h-5 rounded DEFAULT border border-outline flex items-center justify-center bg-surface-container-highest group-hover:bg-surface-container-lowest transition-colors">
+<input checked="" class="opacity-0 absolute w-0 h-0" type="checkbox"/>
+<span class="material-symbols-outlined text-[16px] text-primary opacity-100 transition-opacity" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body text-sm text-on-surface">2nd Generation</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="w-5 h-5 rounded DEFAULT border border-outline flex items-center justify-center bg-surface-container-highest group-hover:bg-surface-container-lowest transition-colors">
+<input class="opacity-0 absolute w-0 h-0" type="checkbox"/>
+<span class="material-symbols-outlined text-[16px] text-primary opacity-0 transition-opacity" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body text-sm text-on-surface">4th Generation</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="w-5 h-5 rounded DEFAULT border border-outline flex items-center justify-center bg-surface-container-highest group-hover:bg-surface-container-lowest transition-colors">
+<input class="opacity-0 absolute w-0 h-0" type="checkbox"/>
+<span class="material-symbols-outlined text-[16px] text-primary opacity-0 transition-opacity" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body text-sm text-on-surface">Direct Injection</span>
+</label>
+</div>
+</div>
+<!-- Filter Group: Power -->
+<div class="mb-8">
+<h3 class="font-body font-semibold text-sm text-on-surface-variant mb-3">Power Output</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="w-5 h-5 rounded DEFAULT border border-outline flex items-center justify-center bg-surface-container-highest group-hover:bg-surface-container-lowest transition-colors">
+<input class="opacity-0 absolute w-0 h-0" type="checkbox"/>
+<span class="material-symbols-outlined text-[16px] text-primary opacity-0 transition-opacity" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body text-sm text-on-surface">Up to 100kW</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="w-5 h-5 rounded DEFAULT border border-outline flex items-center justify-center bg-surface-container-highest group-hover:bg-surface-container-lowest transition-colors">
+<input checked="" class="opacity-0 absolute w-0 h-0" type="checkbox"/>
+<span class="material-symbols-outlined text-[16px] text-primary opacity-100 transition-opacity" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body text-sm text-on-surface">100 - 150kW</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="w-5 h-5 rounded DEFAULT border border-outline flex items-center justify-center bg-surface-container-highest group-hover:bg-surface-container-lowest transition-colors">
+<input class="opacity-0 absolute w-0 h-0" type="checkbox"/>
+<span class="material-symbols-outlined text-[16px] text-primary opacity-0 transition-opacity" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body text-sm text-on-surface">150+ kW</span>
+</label>
+</div>
+</div>
+<!-- Filter Group: Cylinders -->
+<div>
+<h3 class="font-body font-semibold text-sm text-on-surface-variant mb-3">Cylinders</h3>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full font-body text-sm font-medium hover:bg-surface-container-lowest transition-colors border border-transparent hover:border-outline-variant/15">4</button>
+<button class="px-4 py-2 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full font-body text-sm font-medium shadow-[0_0_40px_rgba(26,28,28,0.06)]">6</button>
+<button class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full font-body text-sm font-medium hover:bg-surface-container-lowest transition-colors border border-transparent hover:border-outline-variant/15">8</button>
+</div>
+</div>
+</aside>
+<!-- Catalog Area -->
+<section class="flex-1 flex flex-col">
+<!-- Top Bar: Search & Results -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4 bg-surface-container-lowest p-6 rounded-xl shadow-[0_0_40px_rgba(26,28,28,0.06)]">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">search</span>
+<input class="w-full bg-surface-container-highest hover:bg-surface-container-lowest focus:bg-surface-container-lowest text-on-surface font-body rounded-lg py-3 pl-12 pr-4 border-none focus:ring-0 border-b-2 border-transparent focus:border-primary-container transition-all outline-none" placeholder="Search catalog..." type="text"/>
+</div>
+<div class="font-body text-on-surface-variant text-sm whitespace-nowrap">
+                    Showing <strong class="text-on-surface">42</strong> products
+                </div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 flex flex-col h-full hover:shadow-[0_0_40px_rgba(26,28,28,0.06)] transition-shadow border border-outline-variant/15 group relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-variant/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
+<div class="relative z-10 flex-1 flex flex-col">
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-6 flex items-center justify-center p-4">
+<img alt="Engine Component" class="w-full h-full object-contain mix-blend-multiply" data-alt="High-tech automotive electronic control unit in silver metallic casing with connecting ports on clean white background, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiA0di6OwU0p17fsXwHCdIEIyZMzYGZA7rylYPNAPaAWbk8cnPYqhbHFbW1ug1_Z5aXq2Ljk2cq34c3msAojFYqs1NlLMalxLS1ZiTBQecpsuPu_gwzEK3Uxj9yPJtd4leeOhaATKTn6-kUnzsM7Fdj9qvt_CKwZII2hEm0SBO2ymJxIcCk7oCSMcV9bDkdUEHcArr_Kx6hzFDhbkrIfFUTmabMrDEr-tosKIK2ibN2IvdyPGK7G2csrUbLQbVtjBEYSTSVRd7Zg"/>
+</div>
+<div class="font-body text-xs font-semibold text-primary mb-2 uppercase tracking-wider">SKU: DT-400-Pro</div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-2 leading-tight">Maxi-2 4 Cylinder Controller</h3>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-body font-medium">4 Cylinders</span>
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-body font-medium">OBDII</span>
+</div>
+<div class="mt-auto">
+<button class="w-full py-3 bg-surface-container-high text-on-surface rounded-full font-body font-medium hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2">
+                                Details
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 flex flex-col h-full hover:shadow-[0_0_40px_rgba(26,28,28,0.06)] transition-shadow border border-outline-variant/15 group relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-variant/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
+<div class="relative z-10 flex-1 flex flex-col">
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-6 flex items-center justify-center p-4">
+<img alt="Reducer" class="w-full h-full object-contain mix-blend-multiply" data-alt="Heavy duty metallic LPG reducer valve with brass fittings, polished aluminum surface, professional automotive photography, sharp focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrXgLRWl5VO_NoM7t-A5kggLVs-v31o8kCPlpS1Uvj595iYgOi1_cKUeKVcRSN8opta4vKH9s9CR86o8ev4aHIaUKRCakxujWtPvxIMEr2mCgWAlDG9jFwwh70mbbV9FmbDutGMSJ6HkkwREj7jRW0mixCMKr8giimcJz6UhBtMWNOKG-nb4oKvuB7ojlgrkECjzI_6tE3Uk7BCOvduHQQHzNdNk8VwwtljEY6RMEdyjadO9FHlJoa8eK0NBb7QFBC-Rq75EL6Rw"/>
+</div>
+<div class="font-body text-xs font-semibold text-primary mb-2 uppercase tracking-wider">SKU: DT-RED-150</div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-2 leading-tight">Palladio Reducer 150kW</h3>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-body font-medium">Up to 150kW</span>
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-body font-medium">High Pressure</span>
+</div>
+<div class="mt-auto">
+<button class="w-full py-3 bg-surface-container-high text-on-surface rounded-full font-body font-medium hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2">
+                                Details
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 flex flex-col h-full hover:shadow-[0_0_40px_rgba(26,28,28,0.06)] transition-shadow border border-outline-variant/15 group relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-variant/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
+<div class="relative z-10 flex-1 flex flex-col">
+<div class="w-full aspect-square bg-surface-container-low rounded-lg mb-6 flex items-center justify-center p-4">
+<img alt="Injectors" class="w-full h-full object-contain mix-blend-multiply" data-alt="Precision machined fuel injector rail in dark grey with blue accent rings, technical lighting, isolated on light grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5WpPI9fPX8vDXkw0AOOqpo76aGwMhdY5j7XCyYAAiTt8jIu6Hn1RmI0GUpeNnpz2W1cmb0ZZWi4Fk5f1dkejfXmRPH8h0istCXlmMqduFgwLUQ7QL-nnxgGgg-vRWYpT0cP6v2DFnScKzYSYsXS4hQQpzwg3Fp2Zi_K-mw6FsaPF7yN-ITqQYPI3jlEgS5iuUVYr7slsc3o0RCy8qNKx0ZWP4dh3ZNlADBM2p7wUwjedwi57xMuIACtIrfQDoabTAHJ1BR0Dk0A"/>
+</div>
+<div class="font-body text-xs font-semibold text-primary mb-2 uppercase tracking-wider">SKU: DT-INJ-A6</div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-2 leading-tight">A.E.B. Polymer Injector Rail</h3>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-body font-medium">3 Cylinders</span>
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-body font-medium">Fast Response</span>
+</div>
+<div class="mt-auto">
+<button class="w-full py-3 bg-surface-container-high text-on-surface rounded-full font-body font-medium hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2">
+                                Details
+                                <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination (Simple placeholder) -->
+<div class="mt-12 flex justify-center gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-on-primary font-body font-medium shadow-[0_0_40px_rgba(26,28,28,0.06)]">1</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface font-body font-medium hover:bg-surface-container-low transition-colors">2</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface font-body font-medium hover:bg-surface-container-low transition-colors">3</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-slate-50 dark:bg-slate-950 font-['Inter'] text-sm leading-relaxed w-full mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center py-16 px-12 border-t border-slate-200 dark:border-slate-800 max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-2 mb-6 md:mb-0">
+<div class="text-lg font-bold text-slate-900 dark:text-white font-headline">
+                DIGITRONIC
+            </div>
+<p class="text-slate-500 dark:text-slate-400">Copyright 2024 DIGITRONIC</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-all duration-300 ease-in-out" href="#">Privacy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-all duration-300 ease-in-out" href="#">Terms</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-all duration-300 ease-in-out" href="#">Certificates</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-all duration-300 ease-in-out" href="#">Support</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-all duration-300 ease-in-out font-medium" href="tel:+74950000000">+7 (495) 000-00-00</a>
+</div>
+</div>
+</footer>
+</body></html>
