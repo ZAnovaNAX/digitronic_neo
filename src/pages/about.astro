@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getEntry, render } from 'astro:content';
+
+const page = await getEntry('pages', 'about');
+const data = page?.data || { title: "О компании" };
+let Content;
+if (page) {
+    const rendered = await render(page);
+    Content = rendered.Content;
+}
+---
+
+<Layout title={data.title}>
+    <div class="relative bg-slate-900 text-white py-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            {data.hero_image && <img src={data.hero_image} alt="About Background" class="w-full h-full object-cover opacity-30"/>}
+            <div class="absolute inset-0 bg-slate-900/60 mix-blend-multiply"></div>
+        </div>
+        <div class="relative z-10 max-w-screen-2xl mx-auto px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-black font-headline mb-6">{data.title}</h1>
+            <p class="text-xl text-slate-300 max-w-3xl mx-auto font-light">DIGITRONIC Autogas Systems</p>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-8 py-20 prose prose-lg prose-slate prose-headings:font-headline prose-a:text-blue-600">
+        {Content ? <Content /> : <p>Информация о компании скоро появится.</p>}
+    </div>
+</Layout>

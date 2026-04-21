@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getEntry, render } from 'astro:content';
+
+const page = await getEntry('pages', 'software');
+const data = page?.data || { title: "Программное обеспечение" };
+let Content;
+if (page) {
+    const rendered = await render(page);
+    Content = rendered.Content;
+}
+---
+
+<Layout title={data.title}>
+    <div class="bg-blue-600 text-white py-20">
+        <div class="max-w-screen-2xl mx-auto px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-black font-headline mb-4">{data.title}</h1>
+            <p class="text-blue-100 max-w-2xl mx-auto">Скачайте актуальные версии ПО и документацию для настройки оборудования DIGITRONIC.</p>
+        </div>
+    </div>
+
+    <div class="max-w-screen-2xl mx-auto px-8 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2">
+            <div class="prose prose-slate max-w-none mb-12">
+                {Content ? <Content /> : null}
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                <div class="bg-slate-50 px-6 py-4 border-b border-slate-200">
+                    <h2 class="font-bold font-headline text-lg text-slate-900">Доступные программы</h2>
+                </div>
+                <div class="divide-y divide-slate-100">
+                    {data.programs ? data.programs.map(prog => (
+                        <div class="p-6 flex flex-col sm:flex-row items-center justify-between hover:bg-slate-50 transition-colors">
+                            <div class="flex items-center mb-4 sm:mb-0">
+                                <span class="material-symbols-outlined text-4xl text-blue-500 mr-4">code</span>
+                                <div>
+                                    <h3 class="font-bold text-slate-900">{prog.name}</h3>
+                                    <p class="text-sm text-slate-500">Версия: {prog.version}</p>
+                                </div>
+                            </div>
+                            <a href={prog.link} class="bg-white border border-slate-200 hover:border-blue-600 hover:text-blue-600 text-slate-700 px-6 py-2 rounded-full font-medium transition-colors w-full sm:w-auto text-center">
+                                Скачать
+                            </a>
+                        </div>
+                    )) : (
+                        <div class="p-6 text-center text-slate-500">Программы пока не добавлены</div>
+                    )}
+                </div>
+            </div>
+        </div>
+
+        <aside>
+            <div class="bg-slate-900 text-white rounded-2xl p-8">
+                <h3 class="font-bold font-headline text-xl mb-4">Нужна помощь?</h3>
+                <p class="text-slate-400 mb-6">Наша служба технической поддержки готова помочь вам с настройкой оборудования.</p>
+                <a href="/contact" class="block text-center bg-blue-600 hover:bg-blue-500 py-3 rounded-xl font-bold transition-colors">
+                    Связаться с поддержкой
+                </a>
+            </div>
+        </aside>
+    </div>
+</Layout>

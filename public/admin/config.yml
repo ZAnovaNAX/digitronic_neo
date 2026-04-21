@@ -1,0 +1,61 @@
+local_backend: true
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: 'Create {{collection}} "{{slug}}"'
+    update: 'Update {{collection}} "{{slug}}"'
+    delete: 'Delete {{collection}} "{{slug}}"'
+    uploadMedia: 'Upload "{{path}}"'
+    deleteMedia: 'Delete "{{path}}"'
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "pages"
+    label: "Страницы"
+    files:
+      - label: "Главная страница"
+        name: "home"
+        file: "src/content/pages/home.md"
+        fields:
+          - { label: "Заголовок", name: "title", widget: "string" }
+          - { label: "Описание", name: "description", widget: "text" }
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Image", name: "hero_image", widget: "image" }
+          - { label: "Features", name: "features", widget: "list", fields: [
+              { label: "Title", name: "title", widget: "string" },
+              { label: "Text", name: "text", widget: "string" }
+            ] }
+      - label: "О компании"
+        name: "about"
+        file: "src/content/pages/about.md"
+        fields:
+          - { label: "Заголовок", name: "title", widget: "string" }
+          - { label: "Hero Image", name: "hero_image", widget: "image" }
+          - { label: "Контент", name: "body", widget: "markdown" }
+      - label: "Программное обеспечение"
+        name: "software"
+        file: "src/content/pages/software.md"
+        fields:
+          - { label: "Заголовок", name: "title", widget: "string" }
+          - { label: "Hero Image", name: "hero_image", widget: "image" }
+          - { label: "Контент", name: "body", widget: "markdown" }
+          - { label: "Programs", name: "programs", widget: "list", fields: [
+              { label: "Name", name: "name", widget: "string" },
+              { label: "Version", name: "version", widget: "string" },
+              { label: "Link", name: "link", widget: "string" }
+            ] }
+
+  - name: "products"
+    label: "Каталог товаров"
+    folder: "src/content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Название", name: "title", widget: "string" }
+      - { label: "Категория", name: "category", widget: "select", options: ["Комплекты", "Редукторы", "Форсунки", "Баллоны"] }
+      - { label: "Изображение", name: "image", widget: "image", required: false }
+      - { label: "Цена", name: "price", widget: "string", required: false }
+      - { label: "Описание", name: "body", widget: "markdown" }

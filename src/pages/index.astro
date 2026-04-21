@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getEntry } from 'astro:content';
+
+const page = await getEntry('pages', 'home');
+const data = page?.data || { title: "Главная", hero_title: "Надежное ГБО", description: "Добро пожаловать" };
+---
+
+<Layout title={data.title}>
+    <!-- Hero Section -->
+    <section class="relative bg-slate-900 text-white overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            {data.hero_image && <img src={data.hero_image} alt="Hero Background" class="w-full h-full object-cover opacity-40"/>}
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-900 to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-screen-2xl mx-auto px-8 py-32 md:py-48 flex flex-col items-start">
+            <h1 class="text-5xl md:text-7xl font-black font-headline mb-6 max-w-3xl leading-tight">
+                {data.hero_title}
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-300 max-w-2xl mb-10 font-light">
+                {data.description}
+            </p>
+            <div class="flex space-x-4">
+                <a href="/catalog" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold transition-all text-lg shadow-lg shadow-blue-500/30">
+                    Перейти в каталог
+                </a>
+                <a href="/about" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-full font-bold transition-all text-lg border border-white/20">
+                    Узнать больше
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold font-headline text-slate-900 mb-4">Почему выбирают нас</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Мы предлагаем передовые решения для экономии топлива и защиты окружающей среды.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {data.features && data.features.map(feature => (
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                            <span class="material-symbols-outlined text-3xl">verified</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-headline mb-3 text-slate-900">{feature.title}</h3>
+                        <p class="text-slate-600 leading-relaxed">{feature.text}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+</Layout>
